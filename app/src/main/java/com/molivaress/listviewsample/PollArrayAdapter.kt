@@ -15,7 +15,7 @@ class PollArrayAdapter(
     private val inflater = LayoutInflater.from(context)
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-        val view = inflater.inflate(resourceId, parent, false)
+        val view = convertView ?: inflater.inflate(resourceId, parent, false)
         view.tvTitle.text = pollList[position].title
         view.tvBody.text = pollList[position].body
         return view
